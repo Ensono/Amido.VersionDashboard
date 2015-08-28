@@ -9,9 +9,9 @@ using Microsoft.Azure.Documents.Client;
 
 namespace Amido.VersionDashboard.Web.Domain {
     public class Data {
-        private string DocumentDatabaseUri = "TODO";
-        private string DocumentDatabaseAuthKey = "TODO";
-        private string DocumentDatabaseName = "TODO";
+        private string DocumentDatabaseUri = Settings.Default.DocumentDatabaseUri;
+        private string DocumentDatabaseAuthKey = Settings.Default.DocumentDatabaseAuthKey;
+        private string DocumentDatabaseName = Settings.Default.DocumentDatabaseName;
         private IEnumerable<DashboardData> _dashboardCache;
 
         public IEnumerable<Navbar> NavigationItems() {
