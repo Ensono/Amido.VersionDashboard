@@ -2,10 +2,10 @@
 
 using System.Collections.Generic;
 
-namespace Amido.VersionDashboard.Web.Domain {
-    public class DashboardData {
+namespace Amido.VersionDashboard.Data.Model {
+    public class DashboardSection {
         public string Title { get; set; }
-        public IEnumerable<SectionData> Sections { get; set; }
         public string Slug { get; set; }
+        public IEnumerable<DashboardPanel> Panels { get; set; }
     }
 }

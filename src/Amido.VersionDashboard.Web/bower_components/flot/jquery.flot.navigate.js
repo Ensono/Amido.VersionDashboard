@@ -108,18 +108,18 @@ Licensed under the MIT License ~ http://threedubmedia.googlecode.com/files/MIT-L
                     if (k = f(h, 'drag', j), c.drop && (c.drop.allowed = k !== !1, c.drop.handler(h)), k !== !1) {
                         break;
                     }
-                    h.type = 'mouseup'
+                    h.type = 'mouseup';
                 }
             case'mouseup':
-                b.remove(document, 'mousemove mouseup', e), d.dragging && (c.drop && c.drop.handler(h), f(h, 'dragend', j)), i(j, !0), d.dragging = d.proxy = l.elem = !1
+                b.remove(document, 'mousemove mouseup', e), d.dragging && (c.drop && c.drop.handler(h), f(h, 'dragend', j)), i(j, !0), d.dragging = d.proxy = l.elem = !1;
         }
-        return!0
+        return!0;
     }
 
     function f(b, c, d) {
         b.type = c;
         var e = a.event.dispatch.call(d, b);
-        return e === !1 ? !1 : e || b.result
+        return e === !1 ? !1 : e || b.result;
     }
 
     function g(a) { return Math.pow(a, 2) }
@@ -130,7 +130,7 @@ Licensed under the MIT License ~ http://threedubmedia.googlecode.com/files/MIT-L
 
     a.fn.drag = function(a, b, c) { return b && this.bind('dragstart', a), c && this.bind('dragend', c), a ? this.bind('drag', b ? b : a) : this.trigger('drag') };
     var b = a.event, c = b.special, d = c.drag = { not: ':input', distance: 0, which: 1, dragging: !1, setup: function(c) { c = a.extend({ distance: d.distance, which: d.which, not: d.not }, c || {}), c.distance = g(c.distance), b.add(this, 'mousedown', e, c), this.attachEvent && this.attachEvent('ondragstart', h) }, teardown: function() { b.remove(this, 'mousedown', e), this === d.dragging && (d.dragging = d.proxy = !1), i(this, !0), this.detachEvent && this.detachEvent('ondragstart', h) } };
-    c.dragstart = c.dragend = { setup: function() {}, teardown: function() {} }
+    c.dragstart = c.dragend = { setup: function() {}, teardown: function() {} };
 })(jQuery);
 
 /* jquery.mousewheel.min.js
@@ -155,7 +155,7 @@ Licensed under the MIT License ~ http://threedubmedia.googlecode.com/files/MIT-L
         void 0 !== b.wheelDeltaY && (g = b.wheelDeltaY / 120);
         void 0 !== b.wheelDeltaX && (e = -1 * b.wheelDeltaX / 120);
         c.unshift(a, f, e, g);
-        return(d.event.dispatch || d.event.handle).apply(this, c)
+        return(d.event.dispatch || d.event.handle).apply(this, c);
     }
 
     var c = ['DOMMouseScroll', 'mousewheel'];
@@ -171,7 +171,7 @@ Licensed under the MIT License ~ http://threedubmedia.googlecode.com/files/MIT-L
                     this.addEventListener(c[--a], e, !1);
                 }
             } else {
-                this.onmousewheel = e
+                this.onmousewheel = e;
             }
         },
         teardown: function() {
@@ -180,11 +180,11 @@ Licensed under the MIT License ~ http://threedubmedia.googlecode.com/files/MIT-L
                     this.removeEventListener(c[--a], e, !1);
                 }
             } else {
-                this.onmousewheel = null
+                this.onmousewheel = null;
             }
         }
     };
-    d.fn.extend({ mousewheel: function(a) { return a ? this.bind('mousewheel', a) : this.trigger('mousewheel') }, unmousewheel: function(a) { return this.unbind('mousewheel', a) } })
+    d.fn.extend({ mousewheel: function(a) { return a ? this.bind('mousewheel', a) : this.trigger('mousewheel') }, unmousewheel: function(a) { return this.unbind('mousewheel', a) } });
 })(jQuery);
 
 

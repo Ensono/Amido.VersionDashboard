@@ -4,16 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using Amido.VersionDashboard.Web.Domain;
+using Amido.VersionDashboard.Data;
 using Amido.VersionDashboard.Web.Models;
+using Dashboard = Amido.VersionDashboard.Web.Models.Dashboard;
 
 namespace Amido.VersionDashboard.Web.Controllers {
     public class DashboardController : Controller {
         private readonly IDataStore _dataStore;
-
-        public DashboardController(IDataStore dataStore) {
-            _dataStore = dataStore;
-        }
 
         private readonly Dictionary<string, string> flags = new Dictionary<string, string> {
             {"Ireland", "flag flag-ireland"},
@@ -27,6 +24,10 @@ namespace Amido.VersionDashboard.Web.Controllers {
             {"Vouchers Options", "noun noun-vouchers"},
             {"Subscriptions Options", "noun noun-subscriptions"}
         };
+
+        public DashboardController(IDataStore dataStore) {
+            _dataStore = dataStore;
+        }
 
         // GET: Dashboard
         public ActionResult Dashboard(string slug) {

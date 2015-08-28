@@ -28,40 +28,40 @@ can just fix the size of their placeholders.
     $.event.special[u] = {
         setup: function() {
             if (!n[f] && this[s]) {
-                return false
+                return false;
             }
             var e = $(this);
             i.push(this);
             e.data(m, { w: e.width(), h: e.height() });
             if (i.length === 1) {
                 a = t;
-                h()
+                h();
             }
         },
         teardown: function() {
             if (!n[f] && this[s]) {
-                return false
+                return false;
             }
             var e = $(this);
             for (var t = i.length - 1; t >= 0; t--) {
                 if (i[t] == this) {
                     i.splice(t, 1);
-                    break
+                    break;
                 }
             }
             e.removeData(m);
             if (!i.length) {
                 if (r) {
-                    cancelAnimationFrame(a)
+                    cancelAnimationFrame(a);
                 } else {
-                    clearTimeout(a)
+                    clearTimeout(a);
                 }
-                a = null
+                a = null;
             }
         },
         add: function(e) {
             if (!n[f] && this[s]) {
-                return false
+                return false;
             }
             var i;
 
@@ -69,22 +69,22 @@ can just fix the size of their placeholders.
                 var r = $(this), s = r.data(m) || {};
                 s.w = n !== t ? n : r.width();
                 s.h = a !== t ? a : r.height();
-                i.apply(this, arguments)
+                i.apply(this, arguments);
             }
 
             if ($.isFunction(e)) {
                 i = e;
-                return a
+                return a;
             } else {
                 i = e.handler;
-                e.handler = a
+                e.handler = a;
             }
         }
     };
 
     function h(t) {
         if (r === true) {
-            r = t || 1
+            r = t || 1;
         }
         for (var s = i.length - 1; s >= 0; s--) {
             var l = $(i[s]);
@@ -92,29 +92,29 @@ can just fix the size of their placeholders.
                 var f = l.width(), c = l.height(), d = l.data(m);
                 if (d && (f !== d.w || c !== d.h)) {
                     l.trigger(u, [d.w = f, d.h = c]);
-                    r = t || true
+                    r = t || true;
                 }
             } else {
                 d = l.data(m);
                 d.w = 0;
-                d.h = 0
+                d.h = 0;
             }
         }
         if (a !== null) {
             if (r && (t == null || t - r < 1e3)) {
-                a = e.requestAnimationFrame(h)
+                a = e.requestAnimationFrame(h);
             } else {
                 a = setTimeout(h, n[o]);
-                r = false
+                r = false;
             }
         }
     }
 
     if (!e.requestAnimationFrame) {
-        e.requestAnimationFrame = function() { return e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function(t, i) { return e.setTimeout(function() { t((new Date).getTime()) }, n[l]) } }()
+        e.requestAnimationFrame = function() { return e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function(t, i) { return e.setTimeout(function() { t((new Date).getTime()) }, n[l]) } }();
     }
     if (!e.cancelAnimationFrame) {
-        e.cancelAnimationFrame = function() { return e.webkitCancelRequestAnimationFrame || e.mozCancelRequestAnimationFrame || e.oCancelRequestAnimationFrame || e.msCancelRequestAnimationFrame || clearTimeout }()
+        e.cancelAnimationFrame = function() { return e.webkitCancelRequestAnimationFrame || e.mozCancelRequestAnimationFrame || e.oCancelRequestAnimationFrame || e.msCancelRequestAnimationFrame || clearTimeout }();
     }
 })(jQuery, this);
 

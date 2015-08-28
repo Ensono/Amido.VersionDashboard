@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using Amido.VersionDashboard.Web.Domain;
+using Amido.VersionDashboard.Data;
 using Amido.VersionDashboard.Web.Models;
 using Newtonsoft.Json.Linq;
 

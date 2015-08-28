@@ -1,72 +1,69 @@
+// ©2015 Amido Limited (https://www.amido.com), Licensed under the terms of the Apache 2.0 Licence (http://www.apache.org/licenses/LICENSE-2.0)
+
+using System;
+using System.Web;
 using System.Web.Http;
+using Amido.VersionDashboard.Data;
+using Amido.VersionDashboard.Data.DocumentDb;
+using Amido.VersionDashboard.Web.App_Start;
 using Amido.VersionDashboard.Web.Domain;
+using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+using Ninject;
+using Ninject.Web.Common;
 using Ninject.Web.WebApi;
+using WebActivatorEx;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Amido.VersionDashboard.Web.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(Amido.VersionDashboard.Web.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof (NinjectWebCommon), "Start")]
+[assembly: ApplicationShutdownMethod(typeof (NinjectWebCommon), "Stop")]
 
-namespace Amido.VersionDashboard.Web.App_Start
-{
-    using System;
-    using System.Web;
-
-    using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
-    using Ninject;
-    using Ninject.Web.Common;
-
-    public static class NinjectWebCommon 
-    {
+namespace Amido.VersionDashboard.Web.App_Start {
+    public static class NinjectWebCommon {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
         /// <summary>
-        /// Starts the application
+        ///     Starts the application
         /// </summary>
-        public static void Start() 
-        {
-            DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
-            DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
+        public static void Start() {
+            DynamicModuleUtility.RegisterModule(typeof (OnePerRequestHttpModule));
+            DynamicModuleUtility.RegisterModule(typeof (NinjectHttpModule));
             bootstrapper.Initialize(CreateKernel);
         }
-        
+
         /// <summary>
-        /// Stops the application.
+        ///     Stops the application.
         /// </summary>
-        public static void Stop()
-        {
+        public static void Stop() {
             bootstrapper.ShutDown();
         }
-        
+
         /// <summary>
-        /// Creates the kernel that will manage your application.
+        ///     Creates the kernel that will manage your application.
         /// </summary>
         /// <returns>The created kernel.</returns>
-        private static IKernel CreateKernel()
-        {
+        private static IKernel CreateKernel() {
             var kernel = new StandardKernel();
-            try
-            {
+            try {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 RegisterServices(kernel);
                 return kernel;
-            }
-            catch
-            {
+            } catch {
                 kernel.Dispose();
                 throw;
             }
         }
 
         /// <summary>
-        /// Load your modules or register your services here!
+        ///     Load your modules or register your services here!
         /// </summary>
         /// <param name="kernel">The kernel.</param>
-        private static void RegisterServices(IKernel kernel)
-        {
-            kernel.Bind<IDataStore>().To<DocumentDBDataStore>().InSingletonScope();
+        private static void RegisterServices(IKernel kernel) {
+            kernel.Bind<IDataStore>().To<DocumentDbDataStore>().InSingletonScope();
+            kernel.Bind<INavigationProvider>().To<NavigationProvider>();
+            kernel.Bind<IConfigProvider>().To<AppSettingsConfigProvider>();
+
             GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
-        }        
+        }
     }
 }

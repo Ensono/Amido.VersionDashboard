@@ -37,7 +37,7 @@
         $(this).one('bsTransitionEnd', function() { called = true });
         var callback = function() {
             if (!called) {
-                $($el).trigger($.support.transition.end)
+                $($el).trigger($.support.transition.end);
             }
         };
         setTimeout(callback, duration);
