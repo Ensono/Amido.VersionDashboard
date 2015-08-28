@@ -15,7 +15,7 @@ namespace Amido.VersionDashboard.Web.Controllers {
     public class ProxyController : ApiController {
         [HttpGet]
         public async Task<ResponseModel> Get(Uri uri, string responsePath) {
-            var data = new Data();
+            var data = new DocumentDBDataStore();
             if (!data.AllowedUris().Contains(uri)) {
                 throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.Forbidden) {
                     Content = new StringContent("The requested URI was not allowed."),

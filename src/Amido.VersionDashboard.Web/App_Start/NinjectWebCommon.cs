@@ -1,3 +1,5 @@
+using Amido.VersionDashboard.Web.Domain;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Amido.VersionDashboard.Web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Amido.VersionDashboard.Web.App_Start.NinjectWebCommon), "Stop")]
 
@@ -61,6 +63,7 @@ namespace Amido.VersionDashboard.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<IDataStore>().To<DocumentDBDataStore>().InSingletonScope();
         }        
     }
 }

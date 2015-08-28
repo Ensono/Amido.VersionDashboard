@@ -9,6 +9,12 @@ using Amido.VersionDashboard.Web.Models;
 
 namespace Amido.VersionDashboard.Web.Controllers {
     public class DashboardController : Controller {
+        private readonly IDataStore _dataStore;
+
+        public DashboardController(IDataStore dataStore) {
+            _dataStore = dataStore;
+        }
+
         private readonly Dictionary<string, string> flags = new Dictionary<string, string> {
             {"Ireland", "flag flag-ireland"},
             {"Netherlands", "flag flag-netherlands"}
@@ -24,8 +30,7 @@ namespace Amido.VersionDashboard.Web.Controllers {
 
         // GET: Dashboard
         public ActionResult Dashboard(string slug) {
-            var data = new Data();
-            var dashboardDocuments = data.Dashboards();
+            var dashboardDocuments = _dataStore.Dashboards();
             var thisDashboard = dashboardDocuments.First(x => x.Slug == slug);
 
             var model = new Dashboard {

@@ -2,13 +2,13 @@
 
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using Amido.VersionDashboard.Web.Models;
 using Microsoft.Azure.Documents.Client;
 
 namespace Amido.VersionDashboard.Web.Domain {
-    public class Data {
+    public class Data : IDataStore
+    {
         private string DocumentDatabaseUri = Settings.Default.DocumentDatabaseUri;
         private string DocumentDatabaseAuthKey = Settings.Default.DocumentDatabaseAuthKey;
         private string DocumentDatabaseName = Settings.Default.DocumentDatabaseName;

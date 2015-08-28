@@ -8,7 +8,7 @@ namespace Amido.VersionDashboard.Web.Controllers {
     public class NavbarController : Controller {
         // GET: Navbar
         public ActionResult Index() {
-            var data = new Data();
+            var data = new DocumentDBDataStore();
             return PartialView("_Navbar", data.NavigationItems().ToList());
         }
     }
