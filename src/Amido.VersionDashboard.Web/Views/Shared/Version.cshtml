@@ -1,0 +1,19 @@
+﻿@model Amido.VersionDashboard.Web.Models.VersionPanel
+
+<div class="col-lg-3 col-md-8">
+    <div class="panel panel-green">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-3">
+                    <i class="@Html.DisplayFor(model => model.IconClass)"></i>
+                </div>
+                <div class="col-xs-9 text-right">
+                    <div class="large @Html.DisplayFor(model => model.FlagClass)" data-uri="@Html.DisplayFor(model => model.DataUri)" data-response-path="@Html.DisplayFor(model => model.JsonQuery)">?.?.?????.??</div>
+                    <div>
+                        @Html.DisplayFor(model => model.Description) <strong>(@Html.DisplayFor(model => model.Protocol))</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

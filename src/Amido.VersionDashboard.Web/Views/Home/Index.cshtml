@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Blank";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Welcome to the <strong>Version Dashboard</strong>
+            </h1>
+            <p>If you were trying to get a picture of all of the software versions of the components in a given environment, then you have come to the right place. Use the navigation on the left hand side to select an environment type, the dashboard will automatically refresh every 30 seconds so you don't need to automatically refresh the endpoints.</p>
+
+        </div>
+
+        <!-- /.col-lg-12 -->
+
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>Service Status</h2>
+            <p>
+                There are three possible states for a serviceL OK, Warning and Unavailable. A service is declared as being in a warning state if the version endpoint takes more than 200ms, i.e a 5<sup>th</sup> of a second, to respond.
+            </p>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-3 col-md-8">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-shopping-cart fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="large flag flag-netherlands">1.2.3456.78</div>
+                            <div>My OK Service</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-shopping-cart fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="large flag flag-netherlands">1.2.3456.78</div>
+                            <div>My Slow Service</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-shopping-cart fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="large flag flag-netherlands">1.2.3456.78</div>
+                            <div>My Unavailable Service</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /.row -->
+
+</div>
+
+<!-- /.container-fluid -->

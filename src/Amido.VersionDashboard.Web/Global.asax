@@ -1,0 +1,1 @@
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Amido.VersionDashboard.Web.MvcApplication" Language="C#" %>

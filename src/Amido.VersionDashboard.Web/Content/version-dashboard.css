@@ -1,0 +1,33 @@
+﻿.large { font-size: 24px; }
+
+@media (min-width: 1800px) { .large { font-size: 32px; } }
+
+@media (max-width: 1200px) { .large { font-size: 32px; } }
+
+
+.noun {
+    background-repeat: no-repeat;
+    background-size: 5em;
+    display: block;
+    height: 5em;
+    width: 5em;
+}
+
+.noun-delivery { background-image: url("/Content/images/delivery.svg"); }
+
+.noun-discounts { background-image: url("/Content/images/discounts.svg"); }
+
+.noun-subscriptions { background-image: url("/Content/images/subscriptions.svg"); }
+
+.noun-vouchers { background-image: url("/Content/images/vouchers.svg"); }
+
+.flag {
+    background-repeat: no-repeat;
+    padding-left: 1.5em;
+}
+
+.flag-ireland { background-image: url('/Content/images/flag-ireland.svg'); }
+
+.flag-netherlands { background-image: url('/Content/images/flag-netherlands.svg'); }
+
+.panel-heading { max-height: 91px; }
