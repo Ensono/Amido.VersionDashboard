@@ -158,7 +158,7 @@
     <Compile Include="Domain\IDataStore.cs" />
     <Compile Include="Domain\PanelData.cs" />
     <Compile Include="Domain\SectionData.cs" />
-    <Compile Include="Domain\Data.cs" />
+    <Compile Include="Domain\DocumentDBDataStore.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

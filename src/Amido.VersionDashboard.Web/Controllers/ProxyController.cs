@@ -13,10 +13,15 @@ using Newtonsoft.Json.Linq;
 
 namespace Amido.VersionDashboard.Web.Controllers {
     public class ProxyController : ApiController {
+        private readonly IDataStore _dataStore;
+
+        public ProxyController(IDataStore dataStore) {
+            _dataStore = dataStore;
+        }
+
         [HttpGet]
         public async Task<ResponseModel> Get(Uri uri, string responsePath) {
-            var data = new DocumentDBDataStore();
-            if (!data.AllowedUris().Contains(uri)) {
+            if (!_dataStore.AllowedUris().Contains(uri)) {
                 throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.Forbidden) {
                     Content = new StringContent("The requested URI was not allowed."),
                     ReasonPhrase = "URI Forbidden"

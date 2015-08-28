@@ -1,7 +1,9 @@
+using System.Web.Http;
 using Amido.VersionDashboard.Web.Domain;
+using Ninject.Web.WebApi;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Amido.VersionDashboard.Web.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Amido.VersionDashboard.Web.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(Amido.VersionDashboard.Web.App_Start.NinjectWebCommon), "Stop")]
 
 namespace Amido.VersionDashboard.Web.App_Start
 {
@@ -64,6 +66,7 @@ namespace Amido.VersionDashboard.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IDataStore>().To<DocumentDBDataStore>().InSingletonScope();
+            GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
         }        
     }
 }

@@ -6,10 +6,15 @@ using Amido.VersionDashboard.Web.Domain;
 
 namespace Amido.VersionDashboard.Web.Controllers {
     public class NavbarController : Controller {
+        private readonly IDataStore _dataStore;
+
+        public NavbarController(IDataStore dataStore) {
+            _dataStore = dataStore;
+        }
+
         // GET: Navbar
         public ActionResult Index() {
-            var data = new DocumentDBDataStore();
-            return PartialView("_Navbar", data.NavigationItems().ToList());
+            return PartialView("_Navbar", _dataStore.NavigationItems().ToList());
         }
     }
 }

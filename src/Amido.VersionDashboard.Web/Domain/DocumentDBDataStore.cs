@@ -7,7 +7,7 @@ using Amido.VersionDashboard.Web.Models;
 using Microsoft.Azure.Documents.Client;
 
 namespace Amido.VersionDashboard.Web.Domain {
-    public class Data : IDataStore
+    public class DocumentDBDataStore : IDataStore
     {
         private string DocumentDatabaseUri = Settings.Default.DocumentDatabaseUri;
         private string DocumentDatabaseAuthKey = Settings.Default.DocumentDatabaseAuthKey;
