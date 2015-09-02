@@ -31,15 +31,15 @@
 			[
 				{
 					"Description": "Delivery Options",
-					"Icon": "Shopping Cart",
+					"Icon": "Delivery Options",
 					"Flag": "Ireland",
 					"JsonQuery": "version",
 					"Protocol": "HTTP",
 					"DataUri": "http://test-commerce-delivery-v1-eun.amido.com/version"
 				},
 				{
-					"Description": "Discount Options",
-					"Icon": "Shopping Cart",
+					"Description": "Discounts Options",
+					"Icon": "Discounts Options",
 					"Flag": "Ireland",
 					"JsonQuery": "version",
 					"Protocol": "HTTP",
@@ -47,7 +47,7 @@
 				},
 				{
 					"Description": "Subscriptions Options",
-					"Icon": "Shopping Cart",
+					"Icon": "Subscriptions Options",
 					"Flag": "Ireland",
 					"JsonQuery": "version",
 					"Protocol": "HTTP",
@@ -55,23 +55,23 @@
 				},
 				{
 					"Description": "Vouchers Options",
-					"Icon": "Shopping Cart",
-					"Flag": "Netherlands",
+					"Icon": "Vouchers Options",
+					"Flag": "Ireland",
 					"JsonQuery": "version",
 					"Protocol": "HTTP",
-					"DataUri": "http://test-commerce-subscriptions-v1-euw.amido.com/version"
+					"DataUri": "http://test-commerce-subscriptions-v1-eun.amido.com/version"
 				},
 				{
 					"Description": "Delivery Options",
-					"Icon": "Shopping Cart",
+					"Icon": "Delivery Options",
 					"Flag": "Netherlands",
 					"JsonQuery": "version",
 					"Protocol": "HTTP",
 					"DataUri": "http://test-commerce-delivery-v1-euw.amido.com/version"
 				},
 				{
-					"Description": "Discount Options",
-					"Icon": "Shopping Cart",
+					"Description": "Discounts Options",
+					"Icon": "Discounts Options",
 					"Flag": "Netherlands",
 					"JsonQuery": "version",
 					"Protocol": "HTTP",
@@ -79,19 +79,19 @@
 				},
 				{
 					"Description": "Subscriptions Options",
-					"Icon": "Shopping Cart",
+					"Icon": "Subscriptions Options",
 					"Flag": "Netherlands",
 					"JsonQuery": "version",
 					"Protocol": "HTTP",
-					"DataUri": "http://test-commerce-vouchers-v1-euw.amido.com/"
+					"DataUri": "http://test-commerce-vouchers-v1-euw.amido.com/version"
 				},
 				{
 					"Description": "Vouchers Options",
-					"Icon": "Shopping Cart",
+					"Icon": "Vouchers Options",
 					"Flag": "Netherlands",
 					"JsonQuery": "version",
 					"Protocol": "HTTP",
-					"DataUri": "http://test-commerce-subscriptions-v1-euw.amido.com/"
+					"DataUri": "http://test-commerce-subscriptions-v1-euw.amido.com/version"
 				}
 			]
 		}
