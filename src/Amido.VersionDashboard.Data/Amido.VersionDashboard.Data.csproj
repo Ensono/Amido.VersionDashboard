@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettingsConfigProvider.cs" />
-    <Compile Include="DocumentDb\FileSystemDataStore.cs" />
+    <Compile Include="FileSystem\FileSystemDataStore.cs" />
     <Compile Include="Model\Dashboard.cs" />
     <Compile Include="DocumentDb\DocumentDbConnectionString.cs" />
     <Compile Include="DocumentDb\DocumentDBDataStore.cs" />

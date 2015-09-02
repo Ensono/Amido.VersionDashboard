@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Newtonsoft.Json.Linq;
 
-namespace Amido.VersionDashboard.Network {
+namespace Amido.VersionDashboard.Network.Json {
     public class JsonRequestProxy : IRequestProxy {
         public async Task<string> GetData(Uri uri, string responsePath) {
             using (var client = new HttpClient()) {

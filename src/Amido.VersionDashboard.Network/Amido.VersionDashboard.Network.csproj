@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileSystemRequestProxy.cs" />
-    <Compile Include="JsonRequestProxy.cs" />
+    <Compile Include="FileSystem\FileSystemRequestProxy.cs" />
+    <Compile Include="Json\JsonRequestProxy.cs" />
     <Compile Include="IRequestProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

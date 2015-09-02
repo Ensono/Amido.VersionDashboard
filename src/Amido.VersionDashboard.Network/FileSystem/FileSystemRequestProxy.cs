@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Newtonsoft.Json.Linq;
 
-namespace Amido.VersionDashboard.Network {
+namespace Amido.VersionDashboard.Network.FileSystem {
     public class FileSystemRequestProxy : IRequestProxy {
         private readonly string _rootPath;
 

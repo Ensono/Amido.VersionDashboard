@@ -7,7 +7,7 @@ using System.Linq;
 using Amido.VersionDashboard.Data.Model;
 using Newtonsoft.Json;
 
-namespace Amido.VersionDashboard.Data.DocumentDb {
+namespace Amido.VersionDashboard.Data.FileSystem {
     public class FileSystemDataStore : IDataStore {
         private readonly string _rootPath;
 
