@@ -1,0 +1,7 @@
+**Version Dashboard** is a small website that quite simply a collection of boxes that represent the services you have deployed.  These panels describe the type, location and critically the current version of the software as it is deployed.  In and of itself the version dashboard is useless without the capability for each service to be able to expose it's version number to consumers.
+
+## Setup Process
+
+The project is setup in such a way that you can launch the version dashboar without a backing database, simply compile and run the solution in the "Debug" Build Configuration.  This engage the "FileSystem" Database and Network Stack this is the very same system I use for day to day development as it represents all services as JSON files on disk, no actual network connections are made and thus there is no concerns about the security of a database.
+
+It's only once you compile and run the solution in the "Release" Build Configuration that the version Dashboard will attempt to connect to an Azure DocumentDB Database and make actual network calls.  You can of course customize this behaviour by swapping out the mappings in NinjectWebCommon.cs with your own implementations of the Data Store and Request Proxy.
