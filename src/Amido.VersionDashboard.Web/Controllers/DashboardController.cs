@@ -6,7 +6,6 @@ using System.Linq;
 using System.Web.Mvc;
 using Amido.VersionDashboard.Data;
 using Amido.VersionDashboard.Web.Models;
-using Dashboard = Amido.VersionDashboard.Web.Models.Dashboard;
 
 namespace Amido.VersionDashboard.Web.Controllers {
     public class DashboardController : Controller {

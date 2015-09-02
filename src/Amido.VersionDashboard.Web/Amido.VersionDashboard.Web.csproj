@@ -927,6 +927,28 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="App_Data\Endpoints\dev-commerce-bag-v1-eun.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\dev-commerce-bag-v1-euw.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\dev-commerce-delivery-v1-eun.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\dev-commerce-delivery-v1-euw.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\dev-commerce-discounts-v1-eun.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\dev-commerce-subscriptions-v1-eun.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\dev-commerce-discounts-v1-euw.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\dev-commerce-subscriptions-v1-euw.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\dev-commerce-vouchers-v1-eun.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\dev-commerce-vouchers-v1-euw.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\test-commerce-bag-v1-eun.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\test-commerce-bag-v1-euw.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\test-commerce-delivery-v1-eun.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\test-commerce-delivery-v1-euw.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\test-commerce-discounts-v1-eun.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\test-commerce-discounts-v1-euw.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\test-commerce-subscriptions-v1-eun.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\test-commerce-subscriptions-v1-euw.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\test-commerce-vouchers-v1-eun.amido.com\version.json" />
+    <Content Include="App_Data\Endpoints\test-commerce-vouchers-v1-euw.amido.com\version.json" />
+    <Content Include="App_Data\TestData\development.json" />
+    <Content Include="App_Data\TestData\test.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\flot-data.js" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
@@ -968,9 +990,7 @@
     <Content Include="Views\Shared\Version.cshtml" />
     <Content Include="Views\Home\Credits.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Project_Readme.html" />
   </ItemGroup>
@@ -978,6 +998,10 @@
     <ProjectReference Include="..\Amido.VersionDashboard.Data\Amido.VersionDashboard.Data.csproj">
       <Project>{b6fd228a-7ee9-48a0-996b-d407afeea199}</Project>
       <Name>Amido.VersionDashboard.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Amido.VersionDashboard.Network\Amido.VersionDashboard.Network.csproj">
+      <Project>{AEAE7C83-BFA6-471F-B2E5-742D84730ED9}</Project>
+      <Name>Amido.VersionDashboard.Network</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

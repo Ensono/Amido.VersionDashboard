@@ -8,15 +8,17 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Amido.VersionDashboard.Data;
+using Amido.VersionDashboard.Network;
 using Amido.VersionDashboard.Web.Models;
-using Newtonsoft.Json.Linq;
 
 namespace Amido.VersionDashboard.Web.Controllers {
     public class ProxyController : ApiController {
         private readonly IDataStore _dataStore;
+        private readonly IRequestProxy _requestProxy;
 
-        public ProxyController(IDataStore dataStore) {
+        public ProxyController(IDataStore dataStore, IRequestProxy requestProxy) {
             _dataStore = dataStore;
+            _requestProxy = requestProxy;
         }
 
         [HttpGet]
@@ -29,26 +31,12 @@ namespace Amido.VersionDashboard.Web.Controllers {
             }
 
             var stopwatch = Stopwatch.StartNew();
-
-            using (var client = new HttpClient()) {
-                var response = await client.GetAsync(uri);
-                stopwatch.Stop();
-
-                if (response.StatusCode == HttpStatusCode.OK) {
-                    var content = await response.Content.ReadAsStringAsync();
-                    var document = JObject.Parse(content);
-                    return new ResponseModel {
-                        Version = document.SelectToken(responsePath).Value<string>(),
-                        ElapsedMilliseconds = stopwatch.ElapsedMilliseconds
-                    };
-                }
-
-                var errorResponse = new HttpResponseMessage(response.StatusCode) {
-                    Content = response.Content,
-                    ReasonPhrase = response.StatusCode.ToString()
-                };
-                throw new HttpResponseException(errorResponse);
-            }
+            var version = await _requestProxy.GetData(uri, responsePath);
+            stopwatch.Stop();
+            return new ResponseModel {
+                Version = version,
+                ElapsedMilliseconds = stopwatch.ElapsedMilliseconds
+            };
         }
     }
 }

@@ -1,0 +1,19 @@
+﻿{
+  "version": "1.0.15230.3",        
+  "dependencies": {
+    "delivery":{           
+      "version": "1.0.15230.3",    
+      "hosting": "In Process"      
+      },
+    "discounts": {
+      "version": "1.0.15230.3",
+      "hosting": "In Process"
+      },
+    "subscriptions": {
+      "hosting": "HTTP"            
+      },
+    "vouchers": {
+      "hosting": "HTTP"
+    }
+  }
+}

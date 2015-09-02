@@ -880,34 +880,34 @@
                         return['C', b.x, b.y, b.x, b.y, b.x, b.y];
                     }
                     switch (!(a[0]in
-                    f);;&&
-                    (b.qx = b.qy = null), a[0]);;
+                    f);;;&&
+                    (b.qx = b.qy = null), a[0]);;;
                     {case
-                        'M':;;
+                        'M':;;;
                         b.X = a[1], b.Y = a[2];
                         break;case
-                        'A':;;
+                        'A':;;;
                         a = ['C'][E](Hb[D](0, [b.x, b.y][E](a.slice(1))));
                         break;case
-                        'S':;;
+                        'S':;;;
                         'C' == c || 'S' == c ? (d = 2 * b.x - b.bx, e = 2 * b.y - b.by) : (d = b.x, e = b.y), a = ['C', d, e][E](a.slice(1));
                         break;case
-                        'T':;;
+                        'T':;;;
                         'Q' == c || 'T' == c ? (b.qx = 2 * b.x - b.qx, b.qy = 2 * b.y - b.qy) : (b.qx = b.x, b.qy = b.y), a = ['C'][E](Gb(b.x, b.y, b.qx, b.qy, a[1], a[2]));
                         break;case
-                        'Q':;;
+                        'Q':;;;
                         b.qx = a[1], b.qy = a[2], a = ['C'][E](Gb(b.x, b.y, a[1], a[2], a[3], a[4]));
                         break;case
-                        'L':;;
+                        'L':;;;
                         a = ['C'][E](Fb(b.x, b.y, a[1], a[2]));
                         break;case
-                        'H':;;
+                        'H':;;;
                         a = ['C'][E](Fb(b.x, b.y, a[1], b.y));
                         break;case
-                        'V':;;
+                        'V':;;;
                         a = ['C'][E](Fb(b.x, b.y, b.x, a[1]));
                         break;case
-                        'Z':;;
+                        'Z':;;;
                         a = ['C'][E](Fb(b.x, b.y, b.X, b.Y));
                     }
                     return a;

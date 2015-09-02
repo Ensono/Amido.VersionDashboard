@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Http;
 using Amido.VersionDashboard.Data;
 using Amido.VersionDashboard.Data.DocumentDb;
+using Amido.VersionDashboard.Network;
 using Amido.VersionDashboard.Web.App_Start;
 using Amido.VersionDashboard.Web.Domain;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
@@ -59,9 +60,17 @@ namespace Amido.VersionDashboard.Web.App_Start {
         /// </summary>
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel) {
-            kernel.Bind<IDataStore>().To<DocumentDbDataStore>().InSingletonScope();
             kernel.Bind<INavigationProvider>().To<NavigationProvider>();
             kernel.Bind<IConfigProvider>().To<AppSettingsConfigProvider>();
+
+#if DEBUG
+            var dataFolder = AppDomain.CurrentDomain.GetData("DataDirectory") as string;
+            kernel.Bind<IRequestProxy>().To<FileSystemRequestProxy>().WithConstructorArgument(dataFolder);
+            kernel.Bind<IDataStore>().To<FileSystemDataStore>().InSingletonScope().WithConstructorArgument(dataFolder);
+#else
+            kernel.Bind<IRequestProxy>().To<JsonRequestProxy>();
+            kernel.Bind<IDataStore>().To<DocumentDbDataStore>().InSingletonScope();
+#endif
 
             GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
         }
