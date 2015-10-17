@@ -1,12 +1,15 @@
+// ReSharper disable RedundantUsingDirective
 // ©2015 Amido Limited (https://www.amido.com), Licensed under the terms of the Apache 2.0 Licence (http://www.apache.org/licenses/LICENSE-2.0)
 
 using System;
 using System.Web;
 using System.Web.Http;
 using Amido.VersionDashboard.Data;
+using Amido.VersionDashboard.Data.DocumentDb;
 using Amido.VersionDashboard.Data.FileSystem;
 using Amido.VersionDashboard.Network;
 using Amido.VersionDashboard.Network.FileSystem;
+using Amido.VersionDashboard.Network.Json;
 using Amido.VersionDashboard.Web.App_Start;
 using Amido.VersionDashboard.Web.Domain;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
