@@ -992,9 +992,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Amido.VersionDashboard.Data\Amido.VersionDashboard.Data.csproj">
       <Project>{b6fd228a-7ee9-48a0-996b-d407afeea199}</Project>
       <Name>Amido.VersionDashboard.Data</Name>
