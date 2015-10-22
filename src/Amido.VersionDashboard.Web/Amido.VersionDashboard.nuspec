@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Amido.VersionDashboard</id>
+    <title>Version Dashboard</title>
+    <version>1.0.0.0</version>
+    <authors>Richard Slater</authors>
+    <owners>Amido Limited</owners>
+    <licenseUrl>https://amido.com</licenseUrl>
+    <projectUrl>https://amido.com/projects/version-dashboard</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A simple dashboard that reports the current version of software deployed to multiple environments.</description>
+    <releaseNotes>Initial Release</releaseNotes>
+  </metadata>
+</package>
