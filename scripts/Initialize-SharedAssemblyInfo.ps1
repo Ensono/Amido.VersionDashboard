@@ -7,11 +7,11 @@ function Initialize-SharedAssemblyInfo {
     $crlf = [System.Environment]::NewLine;
 
     $current = $PSScriptRoot;
-    while ((-Not (Test-Path "$current\Solutions")) -Or ($current.Length -lt 4)) {
+    while ((-Not (Test-Path "$current\src")) -Or ($current.Length -lt 4)) {
       $current = (Get-Item $current).Parent.FullName;
     }
 
-    $solutions = "$current\Solutions";
+    $solutions = "$current\src";
 
     if (-Not (Test-Path $solutions)) {
       throw "Unable to find solutions directory.";
