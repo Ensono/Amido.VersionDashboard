@@ -8,5 +8,6 @@ namespace Amido.VersionDashboard.Data {
     public interface IDataStore {
         IEnumerable<Uri> AllowedUris();
         IEnumerable<Dashboard> Dashboards();
+        IDictionary<Uri, string> PinnedCertificates();
     }
 }

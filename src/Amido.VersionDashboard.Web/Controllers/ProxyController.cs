@@ -31,7 +31,9 @@ namespace Amido.VersionDashboard.Web.Controllers {
             }
 
             var stopwatch = Stopwatch.StartNew();
-            var version = await _requestProxy.GetData(uri, responsePath);
+            var pinnedCertificates = _dataStore.PinnedCertificates();
+            var pinnedCertificate = pinnedCertificates.SingleOrDefault(x => x.Key == uri).Value;
+            var version = await _requestProxy.GetData(uri, responsePath, pinnedCertificate);
             stopwatch.Stop();
             return new ResponseModel {
                 Version = version,

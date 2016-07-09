@@ -9,7 +9,7 @@ function refreshVersions() {
             })
             .done(function(data) {
                 element.innerHTML = data.Version;
-                if (data.ElapsedMilliseconds > 200) {
+                if (data.ElapsedMilliseconds > 1000) {
                     $(element).parents('.panel')[0].setAttribute('class', 'panel panel-yellow');
                 } else {
                     $(element).parents('.panel')[0].setAttribute('class', 'panel panel-green');

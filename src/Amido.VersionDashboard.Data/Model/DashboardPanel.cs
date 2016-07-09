@@ -8,5 +8,6 @@ namespace Amido.VersionDashboard.Data.Model {
         public string JsonQuery { get; set; }
         public string Protocol { get; set; }
         public string DataUri { get; set; }
+        public string ServerCertificateSubject { get; set; }
     }
 }

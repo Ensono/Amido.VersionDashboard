@@ -17,7 +17,7 @@ namespace Amido.VersionDashboard.Network.FileSystem {
             _rootPath = rootPath;
         }
 
-        public Task<string> GetData(Uri uri, string responsePath) {
+        public Task<string> GetData(Uri uri, string responsePath, string trustInvalidCertificatesWithSubject = null) {
             var endpointsDirectory = Path.Combine(_rootPath, "Endpoints");
             var supportedHosts = Directory.GetDirectories(endpointsDirectory)
                 .Select(x => new DirectoryInfo(x))

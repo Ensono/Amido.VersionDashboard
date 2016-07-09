@@ -30,5 +30,9 @@ namespace Amido.VersionDashboard.Data.FileSystem {
                 .Select(File.ReadAllText)
                 .Select(JsonConvert.DeserializeObject<Dashboard>);
         }
+
+        public IDictionary<Uri, string> PinnedCertificates() {
+            return new Dictionary<Uri, string>();
+        }
     }
 }

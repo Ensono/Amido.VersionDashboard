@@ -5,6 +5,6 @@ using System.Threading.Tasks;
 
 namespace Amido.VersionDashboard.Network {
     public interface IRequestProxy {
-        Task<string> GetData(Uri uri, string responsePath);
+        Task<string> GetData(Uri uri, string responsePath, string trustInvalidCertificatesWithSubject = null);
     }
 }
